@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Burger King Landing Page</title>
+
+  <!-- Bootstrap 5 CSS for layout, navbar, grid system, buttons, and modals -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ========== Navbar ========== -->
+  <nav class="navbar navbar-light bg-light sticky-top shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-2">
+        <a class="navbar-brand" href="#">
+          <img src="Assets/logo.png" alt="Logo" height="40" />
+        </a>
+        <div class="dropdown">
+          <!-- bootstrap used for dropdown -->
+          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <ul class="dropdown-menu animate-dropdown">
+            <li><a class="dropdown-item" href="#menu">Menu</a></li>
+            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- bootstrap buttons -->
+      <div class="d-flex align-items-center gap-2">
+        <!--  login form's trigger using Bootstrap's data-bs-toggle -->
+        <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#loginModal">Log In</button>
+        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal">Order Now</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== Header ========== -->
+  <header class="header text-center">
+    <h1 class="fw-bold text-brown">Welcome to Burger King®</h1>
+    <p class="lead text-muted">Flame-grilled taste that can't be beat</p>
+  </header>
+
+  <!-- ========== The banner ========== -->
+  <!-- banner using Bootstrap's image and container classes -->
+  <section class="d-flex justify-content-center my-4">
+    <div class="static-banner">
+      <img src="Assets/ad2.jpg" alt="Promotional Banner" class="banner-img">
+    </div>
+  </section>
+
+ <!-- ========== Featured items ========== -->
+ <!-- JavaScript for inserting extra items if needed-->
+<section class="text-center py-4 d-flex flex-column align-items-center">
+  <h2 class="text-brown fw-bold mb-4">Featured</h2>
+  <div class="infocards-center-wrapper">
+    <div id="infocards-card" class="infocards-scroll-container"></div>
+  </div>
+</section>
+
+  <!-- ========== Special offers ========== -->
+ 
+<section id="menu" class="py-5 text-center">
+  <h2 class="text-brown fw-bold mb-4">Special offers!</h2>
+  <div class="container">
+    <div class="row g-4" id="offerscards-grid">
+      <!-- Cards generated via script.js -->
+    </div>
+  </div>
+</section>
+
+  <!-- ========== footer ========== -->
+  <footer class="footer text-white text-center">
+    &copy; 2025 Burger King. All Rights Reserved.
+  </footer>
+
+  <!-- ========== LOGIN MODAL ========== -->
+  <!-- made with bootstrap's modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content login-modal">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="Assets/logo.png" alt="Logo" class="modal-logo mb-3">
+          <h6 class="text-orange mb-2">Email</h6>
+          <p class="text-muted small">We'll check if you have an account</p>
+          <div class="mb-3 px-4">
+            <input type="email" class="form-control form-control-lg" placeholder="Email Address *" required>
+          </div>
+          <button class="btn btn-orange mb-3">Login / Register</button>
+          <div>
+            <a href="#" class="guest-link">Continue As Guest</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== burger popups ========== -->
+  <div class="modal fade" id="burgerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content login-modal">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="burgerImage" src="" alt="Burger Image" class="modal-logo mb-3">
+          <h4 id="burgerName" class="fw-bold text-brown"></h4>
+          <p id="burgerDescription" class="text-muted px-4 my-3"></p>
+          <button class="btn btn-orange">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Bootstrap and javascript links ========== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
